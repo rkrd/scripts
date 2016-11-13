@@ -1,0 +1,11 @@
+#!/usr/local/plan9/bin/rc
+
+if(~ $#* 0)
+	what='	'
+if not {
+	what=$1
+	shift
+}
+
+sed 's☺^☺'$what' ☺' $*
+

@@ -1,0 +1,10 @@
+#!/usr/bin/env 9 rc
+if(~ $#* 0){
+  * = '        '
+}
+sed 's☺^'^$1^'☺☺'
+
+#alternatively from acme,
+#        Edit s:^:        :g
+#or
+#        Edit s:^        ::g
