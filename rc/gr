@@ -1,0 +1,8 @@
+#!/usr/local/plan9/bin/rc
+if (~ 2 $#*) {
+	find . -name '*.['$2']' -type f -print | xargs g $1 /dev/null
+}
+if not {
+	find -type f -print | xargs g $1 /dev/null
+}
+
