@@ -1,0 +1,29 @@
+#!/bin/sh
+export BROWSER='firefox'
+PLAN9=/usr/local/plan9
+PATH=$PLAN9/bin:$PATH
+
+# Plumb files instead of starting new editor.
+EDITOR=E
+unset FCEDIT VISUAL
+
+# Get rid of backspace characters in Unix man output.
+PAGER=nobs
+
+# Default font for Plan 9 programs.
+font=$PLAN9/font/lucsans/euro.8.font
+echo $font
+
+# Equivalent variables for rc(1).
+home=$HOME
+#prompt="$H=;          "
+user=$USER
+
+export \
+        BROWSER\
+	PLAN9\
+        font\
+        home\
+        prompt\
+        user
+acme
