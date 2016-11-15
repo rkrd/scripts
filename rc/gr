@@ -1,8 +1,7 @@
 #!/usr/local/plan9/bin/rc
+ft='[ch]'
 if (~ 2 $#*) {
-	find . -name '*.['$2']' -type f -print | xargs g $1 /dev/null
+	ft=$2
+	
 }
-if not {
-	find -type f -print | xargs g $1 /dev/null
-}
-
+find . -name '*.'$ft -type f -print | xargs g $1 /dev/null
