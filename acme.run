@@ -11,7 +11,8 @@ unset FCEDIT VISUAL
 PAGER=nobs
 
 # Default font for Plan 9 programs.
-font=$PLAN9/font/lucsans/euro.8.font
+#font=$PLAN9/font/lucsans/euro.8.font
+font=$PLAN9/font/fixed/unicode.8x13.font
 echo $font
 
 # Equivalent variables for rc(1).
@@ -22,8 +23,12 @@ user=$USER
 export \
         BROWSER\
 	PLAN9\
+	EDITOR\
+	PAGER\
         font\
         home\
         prompt\
         user
-acme
+acme -a -f $font
+
+
