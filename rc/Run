@@ -1,0 +1,21 @@
+#!/bin/rc
+
+if(! ~ $#* 1) {
+        echo 'usage: Run title' >[1=2]
+        exit usage
+}
+
+id=`{awk -v 'pat='$1 '$6 ~ pat {print $1}' /mnt/wsys/index}
+if(~ $#id 0) {
+        echo 'no match for pattern' >[1=2]
+        exit none
+}
+if(! ~ $#id 1) {
+        echo 'ambiguous pattern' >[1=2]
+        exit ambiguous
+}
+if(~ `{wc -w /mnt/wsys/$id/rdsel} 0) {
+        echo 'no command selected' >[1=2]
+        exit missing
+}
+exec rc /mnt/wsys/$id/rdsel
