@@ -1,8 +1,0 @@
-#!/usr/bin/env rc
-if(~ $#* 0){
-  * = '	'    # tab
-}
-sed 's,^,'^$1^,
-
-
-# source https://groups.google.com/forum/#!searchin/comp.os.plan9/a$2B$20a-$20indent%7Csort:relevance/comp.os.plan9/0cLN8OW6ZDQ/eqanOkheK5cJ

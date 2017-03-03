@@ -1,4 +1,0 @@
-#!/usr/local/plan9/bin/rc
-
-echo  ' :0 :$ |a+ |a- |com '|9p write acme/$winid/tag
-
